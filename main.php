@@ -2,7 +2,7 @@
 /**
  * Plugin Name: UEditor-bmqy
  * Plugin URI: http://www.shuxinfeng.cn/sxf/4424.html
- * Description: 百度开源富文本编辑器UEditor！此插件最早由taoqili开发，SamLiu改进,两位作者均不再发布更新版本，大山在其基础上更新到1.4.3版本，bmqy沿用更新至1.4.3.3。
+ * Description: 百度开源富文本编辑器UEditor for wordpress！此插件最早由taoqili开发，SamLiu改进,两位作者均不再发布更新版本，大山在其基础上更新到1.4.3版本，bmqy沿用更新至1.4.3.3。
  * Version: 1.4.3.3
  * Author: 大山, SamLiu, taoqili, bmqy
  * Author URI: https://www.bmqy.net
