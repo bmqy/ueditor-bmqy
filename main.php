@@ -17,28 +17,32 @@ if ( class_exists( "UEditor" ) ) {
         //此处可以配置编辑器的所有配置项，配置方法同editor_config.js        
         "toolbars"=>array(
         	array('fullscreen', 'source', '|', 'undo', 'redo', '|',
-            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
-            'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
-            'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
-            'directionalityltr', 'directionalityrtl', 'indent', '|',
-            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase'),
-        	array('link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-            'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall'),
+            array('customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+            'insertcode', '|',
+            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|',
+            'indent', 'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+            'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+            'template', 'background'),
+        	array('link', 'unlink', 'anchor', '|',
+            'simpleupload', 'insertimage', 'scrawl', 'insertvideo', 'music', 'attachment', 'pagebreak', '|',
             'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
-            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
-            'print', 'preview', 'searchreplace', 'drafts', 'help')
+            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', '|', 'searchreplace', 'drafts', 'help')
         )
         ,'lang'=>$ueditor_lang
         ,"focus"=>true
         ,"textarea"=>"content"
         ,"zIndex"=>1
         ,"initialFrameHeight"=>320  //初始化编辑器高度,默认320
-        ,"wordCount"=>true          //是否开启字数统计
+        ,"wordCount"=>false          //是否开启字数统计
         ,"autoHeightEnabled"=>false  // 是否自动长高,默认true
         //是否可以拉伸长高,默认true(当开启时，自动长高失效)
-        ,"scaleEnabled"=>ture
+        ,"scaleEnabled"=>true
+        //浮动时工具栏距离浏览器顶部的高度，用于某些具有固定头部的页面
+        ,"topOffset"=>30
         ,"minFrameHeight"=>320  //编辑器拖动时最小高度,默认220
         ,"initialStyle"=>'p{font-size:14px;line-height:1.8;}'//编辑器层级的基数,可以用来改变字体等
+        ,"catchRemoteImageEnable"=>false //设置是否抓取远程图片
     ));
     register_activation_hook( __FILE__, array(  &$ue, 'ue_closeDefaultEditor' ) );
     register_deactivation_hook( __FILE__, array(  &$ue, 'ue_openDefaultEditor' ) );
