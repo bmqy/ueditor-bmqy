@@ -38,6 +38,7 @@ if ( class_exists( "UEditor" ) ) {
         //是否可以拉伸长高,默认true(当开启时，自动长高失效)
         ,"scaleEnabled"=>ture
         ,"minFrameHeight"=>320  //编辑器拖动时最小高度,默认220
+        ,"initialStyle"=>'p{font-size:14px;line-height:1.8;}'//编辑器层级的基数,可以用来改变字体等
     ));
     register_activation_hook( __FILE__, array(  &$ue, 'ue_closeDefaultEditor' ) );
     register_deactivation_hook( __FILE__, array(  &$ue, 'ue_openDefaultEditor' ) );
